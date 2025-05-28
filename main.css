@@ -1,0 +1,911 @@
+/*================================================================================Kommentar======================================================================================*/
+/*---------------------------------------------------------------Her læses mit css til min præsentaions portfolio----------------------------------------------------------------*/
+/*--------------------------------------------------------------vær opmærksompå at de fleste kommentare er på engensk------------------------------------------------------------*/
+/*---------------------------------------------------------------mens min html og sider er skrevet med engelske titler------------------------------------------------------------*/
+/*---------------------------------------------------------------Grunden til det er fordi det er nemere at finde rundt------------------------------------------------------------*/
+/*---------------------------------------------------------------i navngivelserne med engelske verber da meget af-----------------------------------------------------------------*/
+/*---------------------------------------------------------------den kilde information er skrevet på engelsk og er----------------------------------------------------------------*/
+/*---------------------------------------------------------------forståeligt og dele venligt hvis man skal dele sin kode.---------------------------------------------------------*/
+/*===============================================================================kommentar-slut===================================================================================*/
+
+/*--------------------------------------------------------------------------------font--------------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --dark: #2F2F2F;
+    --darkest: #010101;
+    --brown: #938581;
+}
+/*--------------------------------------------------------------------------------font-slut--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------Global-Styling--------------------------------------------------------------------------------------*/
+/*Global styling er noget af det første man laver i CSS for at sikre, at siden ser ens ud i alle browsere. Jeg har sat margin og padding til 0 på alle elementer med *, så der ikke kommer underlige mellemrum rundt omkring. Jeg bruger også box-sizing: border-box, fordi det gør det nemmere at styre størrelsen på ting – fx at padding og border ikke lægger ekstra til bredden.*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    font-family: "Inter", sans-serif;
+}
+/*--------------------------------------------------------------------------------Global-Styling-slut--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------min-navigation--------------------------------------------------------------------------------------*/
+.navbar {
+    width: 100%;
+    height: 126px;
+    background-color: var(--dark);
+}
+
+.navbar__content { /*------------------navbar er blokken, og __content er et element*/
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.navbar__image { /*------------------navbar er blokken, og __image er et billede element---------------*/
+    max-height: 60px;
+}
+
+.navbar__list { /*------------------navbar er blokken, og __list er et element med links---------------*/
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__item--active { /*--------------------------- navbar er blokken,og __item og modifier er (--active) ----------------------*/
+    border-bottom: 2px solid #F3FCF0;
+}
+
+.navbar__link { /*------------------navbar er blokken, og __link er et element, den styler links ---------------*/
+    color: #F3FCF0;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.navbar__link:hover { /*------------------navbar er blokken, og __link er et element, hover er pseudo class (se evt w3schools artikel på pseudo clases)---------------*/
+    color: #ccc;
+}
+
+.navbar__link--active { /*--------------------------- navbar er blokken,og __link og modifier er (--active) denne modifier gør min skrift fed ----------------------*/
+    font-weight: bold;
+}
+
+.navbar__link--disabled { /*--------------------------- navbar er blokken,og __link og modifier er (--disabled) modifier disabler ændringer----------------------*/
+    color: grey;
+    pointer-events: none;
+    cursor: default;
+}
+/*--------------------------------------------------------------------------------min-navigation-slut--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------billeder-og-afsnit--------------------------------------------------------------------------------------*/
+.img-section { /* Hero sektion med billede forside. img-section er en blok*/
+    height: 500px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--darkest);
+}
+
+.img-section-photoofme { /* Portrætbillede til venstre, det er et element */
+    height:500px;
+    margin-right: auto;
+}
+
+.graphics {  /* graphics er en block. Container til 3 grafikbilleder. flex er blevet brugt til samle 3 billeder på linje*/ 
+    display: flex;
+    width: 100%;
+}
+
+.graphics-img { /* graphics-img er et element i min blok .graphics */
+    width: 33%;
+}
+
+.home-text { /* dette er en block. Side information nederes på forsiden med sort baggrund*/ 
+    color: #F3FCF0;
+    padding: 0 200px;
+    background: var(--dark);
+}
+
+.home-text {  
+    font-weight: lighter;
+    font-size: 48px;
+}
+
+.home-text-text { /*Undertekst med lidt mindre skriftstørelse, forside slut*//*et element til min block hometekstik*/
+    font-size: 32px;
+    padding-bottom: 150px;
+}
+
+.footer { /* Footer inddelt i 2 kolonner er en block*/
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+    background-color: #D9D9D9;
+}
+
+.footer-list { /* dette er et element*/
+    list-style: none;
+}
+
+.footer-text { /* dette er et element*/
+    font-weight: lighter;
+}
+
+.footer-text a{ /* Styling af links i min footer, footerslut */
+    font-size: 16px;
+    font-weight: lighter;
+    text-decoration: none;
+    color: black;
+} 
+
+.about-me-photo-section { /* dette er en block: omkring mig siden, portræt sat i midten */
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--darkest);
+}
+
+.about-me-photo-section-photo{ /* element i blokken*/
+    height: 600px;
+}
+
+.om-mig-tekst { /*block */
+    color: #F3FCF0;
+    background: var(--dark);
+    padding: 50px 200px 400px 200px;
+}
+
+.om-mig-tekst-h3 { /*element*/
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
+.om-mig-tekst-p { /* element : om-mig slut*/
+    font-size: 32px;
+}
+
+.kontakt-main { /*dette er en block. kontakt mig side*/
+    padding: 0 200px;
+    display: flex;
+    color: #F3FCF0;
+    justify-content: space-between;
+    background-color: var(--dark);
+}
+
+.kontakt-h1{ /*element*/
+    padding-top: 150px;
+    font-size: 48px;
+}
+
+.kontakt-p { /*Ellement*/
+    width: 450px;
+    font-size: 32px;
+}
+
+.kontakt { /*block*/
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.kontaktmig { /*block*/
+    max-width: 540px;
+}
+
+.kontakt-white-text { /*element*/
+    background: #938581;
+    margin-top: -20px;
+    padding: 40px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 540px;
+}
+
+.kontakt-white-text p { /*kontatk mig slut*/
+    margin-top: 30px;
+}
+
+.portefolje { /* block: portfølje side start*/
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.portfolio-first { /*element*/
+    width: 100%;
+    position: relative;
+}
+
+.portefolje img{ /*element*/
+    width: 100%;
+}
+
+.portefolje h1 { /*element*/
+    color: #F3FCF0;
+    position: absolute; /* her placeres billede på foto */
+    top: 55%; /* 50% var ikke hent i center, da navigation på virkede */
+    left: 50%;
+    transform: translate(-50%, -50%);  /* overskriften h1 præcis centreret midt i billedet - kilde hjælp fra en privat lære i CSS, lærte mig med at fejl rette nogle alignment problemer*/
+    font-size: 100px;
+}
+
+.the-porfolio { /*block*/
+    padding: 50px 100px;
+
+
+    color:#F3FCF0;
+    background: var(--dark);
+}
+
+.the-porfolio-h3 .the-porfolio-p { /*elementer*/
+    font-size: 40px;
+}
+
+.the-porfolio-divs { /*elementer*/
+    padding-top: 50px;
+    display: flex;
+    row-gap: 50px;
+    column-gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Uden flex wrap vil mine 6 elementer stå på linje og aldrig bryde om */
+}
+
+.the-porfolio-link { /*element*/
+    width: 400px;
+    border: 1px solid #F3FCF0;
+    /* her bliver min border kun i min bottom*/
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-decoration: none;
+    color: #F3FCF0;
+}
+
+.the-portfolio-text-box { /*element*/
+    height: 350px;
+    padding: 30px 50px;
+    margin-top: -5px; /* her fjerner jeg et par gabs som ødelage alignment */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.the-portfolio-text-box h1 { /*element*/
+    font-size: 48px;
+}
+
+/*--------------------------------------------------------------------------------billeder-og-afsnit-slut-------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------utility-classes--------------------------------------------------------------------------------------*/
+/* små utility classes - se w3schools artikel omkring utility classes */
+.brown {
+    background-color: #938581;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: #990015;
+}
+/*--------------------------------------------------------------------------------utility-classes-slut--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------media-queries-forside--------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1200px) {
+    .navbar__content {
+        flex-direction: column;
+    }
+
+    .graphics {
+        flex-direction: column;
+    }
+
+    .graphics-img {
+        width: 100% !important;
+    }
+
+    .home-text {
+        padding: 20px !important;
+    }
+
+    .home-text-introduktion {
+        font-size: 24px;
+    }
+
+    .home-text-text {
+        font-size:18px;
+        padding-bottom: 40px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .footer-block {
+        margin-bottom: 10px;
+    }
+}
+/*--------------------------------------------------------------------------------media-queries-forside-slut--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------media-queries-kontakt--------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1400px) {
+    .kontakt-main {
+        /* Gør padding mindre, indholdet ryger ikke ud over kanterne*/
+        padding: 0 100px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .kontakt-main {
+/* Gør padding mindre på denne skærm*/
+/* Retning ændres til kolonne, og indhold bliver i center*/
+
+        .kontakt img, .kontakt-white-text{
+            max-width: 420px;
+        }
+
+        .kontakt-h1 {
+            font-size: 38px;
+        }
+
+        .kontakt-p {
+            font-size: 22px;
+        }
+
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .kontakt-main {
+             flex-direction: column;
+             align-items: center;
+        padding: 0 25px;
+
+        .kontakt img, .kontakt-white-text{
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .kontakt {
+            width: 100%;
+        }
+
+       /* .kontakt-h1 {font-size: 38px;} */
+
+        .kontakt-p {
+            font-size: 22px;
+            width: 100%;
+        }
+
+
+    }
+}
+/*--------------------------------------------------------------------------------media-queries-kontakt-slut--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------media-queries-om-mig--------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1200px) {
+    .om-mig-tekst {
+        padding: 40px;
+    }
+
+    .om-mig-tekst-h3 {
+        font-size: 36px;
+    }
+
+    .om-mig-tekst-p {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about-me-photo-section-photo {
+        width: 100%;
+        height: auto; /* heightauto gør at billede ændres så den er respontiv */
+    }
+    .om-mig-tekst-h3 {
+        font-size: 28px;
+    }
+
+    .om-mig-tekst-p {
+        font-size: 22px;
+    }
+}
+/*--------------------------------------------------------------------------------media-queries-om-mig-slut--------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------media-queries-portfolio--------------------------------------------------------------------------------------*/
+
+
+@media only screen and (max-width: 1440px) {
+
+    .the-porfolio-div {
+        width: 540px;
+    }
+}
+
+@media only screen and (max-width: 1310px) {
+    .portfolio-first h1{
+        font-size: 68px;
+    }
+
+    .the-porfolio-div {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .portfolio-first h1{
+        font-size: 48px;
+    }
+
+    .the-porfolio {
+        flex-direction: column;
+        padding: 20px 40px;
+    }
+    .the-porfolio-div {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .portfolio-first h1{
+        font-size: 34px;
+    }
+
+    .the-porfolio {
+        flex-direction: column;
+        padding: 20px 40px;
+    }
+    .the-porfolio-div {
+        width: 100%;
+    }
+}
+/*-------------------------------------------------------------------------media-queries-portfolio-slut------------------------------------------------------------------------------*/
+/*----------------------------------------------------hero-sektion-fælles----------------------------------------------------*/
+
+.hero-img { /*block og img er element*/
+    width: 100%;
+}
+
+.hero-h1 { /*block og h1 er element*/
+    font-size: 128px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#F3FCF0;
+    font-weight: 400;
+}
+/*----------------------------------------------------hero-sektion-fælles-slut---------------------------------------------------*/
+/*----------------------------------------------------videografi-sektion-start----------------------------------------------------*/
+.videografi { /*block*/
+    max-width: 1800px;
+    margin: 0 auto;
+    background-color: var(--dark);
+    padding: 40px 0;
+}
+
+.white-heading { /*element*/
+    padding-top: 8px;
+    font-size: 32px;
+    color: #F3FCF0;
+}
+
+.white-text { /*element*/
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #F3FCF0;
+}
+
+.videografi-center { /*element*/
+    padding: 0 140px;
+}
+
+
+.videografi-item { /*element*/
+    color: #F3FCF0;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 40px;
+}
+.videografi-img-box { /* element*/
+    background-color: #970016;
+    width: 720px;
+    height: 360px;
+
+    display: flex;
+    align-items: center;
+}
+
+.item-text-right {
+
+}
+
+.videografi-img { /* element*/
+    height: 300px;
+    width: 570px;
+    margin-left: 20px;
+    margin-bottom: -16px; /* Justér for skygge, så billedet ser centreret ud */
+}
+
+.videografi-item-text { /* element*/
+    width: 900px;
+}
+
+.item-left { /*moddifyer*/
+    margin-left: 140px;
+}
+
+.item-left p, .item-right p { /* element*/
+    width: 50%;
+}
+
+.border-left { /*moddifyer*/
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+.border-right { /*moddifyer*/
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.img-box-width { /*moddifyer*/
+    width: 1320px;
+}
+/*----------------------------------------------------videografi-sektion-slut----------------------------------------------------*/
+/*----------------------------------------------------animation-sektion-start----------------------------------------------------*/
+.animation { /*block*/
+    background-color: var(--dark);
+    padding: 0 100px;
+    color: #F3FCF0;
+}
+
+.animation-first { /* element*/
+    padding: 80px;
+}
+
+.animation-first h3 { /* element*/
+    font-size: 48px;
+}
+
+.animation-first p { /* element*/
+    font-size: 20px;
+}
+
+.animations { /*block*/
+   /* Flexbox-trick til at centrere */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animations-wrap { /* element*/
+    width: 1080px;
+}
+
+.animations-title { /* element*/
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.animations-description { /* element*/
+    font-size: 18px;
+    padding-bottom: 14px;
+}
+/*----------------------------------------------------animation-sektion-slut----------------------------------------------------*/
+/*----------------------------------------------------grafisk-design-sektion-start----------------------------------------------------*/
+/* Utility class*/
+.background-brown {
+    background-color: #938581 !important;
+}
+/* Utility class slut*/
+
+.graphic-design { /*block*/
+    position: relative;
+    background-color: var(--dark);
+}
+
+.graphicdesign4 { /* element*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50vw;
+    max-height: 800px;
+}
+
+.graphic-design-container { /* element*/
+    max-width: 1800px;
+    padding: 0 100px;
+    margin: 0 auto;
+    color: #F3FCF0;
+}
+
+.reused-header h3 { /* element*/
+    padding-top: 8px;
+    color: #F3FCF0;
+    font-size: 48px;
+}
+
+.reused-header p {  /* element*/
+    font-size: 18px;
+    color: #F3FCF0;
+}
+
+
+.graphic-design-boxes { /* element*/
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    padding-bottom: 60px;
+}
+
+.graphic-design-box { /* element*/
+    height: 780px;
+    width: 600px;
+    background-color: var(--brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.graphic-design-box .img-box { /* element*/
+    width: 480px;
+    margin-top: 40px;
+}
+
+.graphic-design-box p, .graphic-design-box h3 { /* elementer*/
+    width: 80%;
+}
+
+.graphic-design-box h3 { /* element*/
+    font-size: 28px;
+}
+
+.graphic-design-box p {/* element*/
+    font-size: 22px;
+}
+ 
+.text-shadow { /* modifyer*/
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+/*----------------------------------------------------grafisk-design-sektion-slut----------------------------------------------------*/
+/*----------------------------------------------------website-design-sektion-start----------------------------------------------------*/
+
+.website-design-container { /* block*/
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 100px;
+    color: #F3FCF0;
+}
+
+.website-design { /* block*/
+    padding-bottom: 100px;
+}
+
+.redesign { /* block */
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    gap: 15px;
+}
+
+.redesign__item { /* element*/
+}
+
+.redesign__title { /* element*/
+    margin-bottom: 10px;
+}
+
+.redesign__image { /* element*/
+    max-width: 620px;
+    width: 100%;
+}
+/*----------------------------------------------------website-design-sektion-slut----------------------------------------------------*/
+
+/* Utility class*/
+.extra-space {
+    padding: 40px 300px;
+}
+/* Utility class slut*/
+
+/*----------------------------------------------------fotografi-sektion-start----------------------------------------------------*/
+
+.fotografi { /* block*/
+    background-color: var(--dark);
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+    color: #F3FCF0;
+}
+
+.text-container { /* block*/
+    padding: 0 140px 40px 140px;
+}
+
+.white-heading { /* element*/
+    padding-top: 8px;
+    font-size: 32px;
+}
+
+.white-text {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.fotografi-images { /* element*/
+    display: flex;
+}
+
+.fotografi-images-img { /* block*/
+    width: 25%;
+}
+/*----------------------------------------------------fotografi-sektion-slut----------------------------------------------------*/
+
+/*----------------------------------------------------media-queries-start----------------------------------------------------*/
+
+@media only screen and (max-width: 900px) {
+    /*Hero er responsiv*/
+    .hero-h1{
+        font-size: 64px;
+            top: 35%;
+    }
+
+    /* fotografi siden*/
+    .fotografi-images {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fotografi-images-img {
+        width: 100%;
+    }
+
+    .white-heading {
+        font-size: 18px;
+    }
+
+    .text-container {
+        padding: 14px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /*Hero er responsiv*/
+    .hero {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .videografi-item {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .videografi {
+        padding: 0 14px;
+    }
+
+    .videografi-img-box {
+        width: 100%;
+    }
+    .videografi-img {
+        width: 80%;
+        height: auto;
+    }
+
+    .item-right p, .item-left p {
+        width: 100%;
+    }
+
+    .img-box-width, .videografi-item-text {
+        width: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .the-porfolio-divs {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .graphic-design-box {
+        width: 440px;
+    }
+
+    .graphic-design-box .img-box, .graphic-design-box img  {
+        width: 340px;
+    }
+}
+@media only screen and (max-width: 600px) {
+ .graphic-design-box  {
+     width: 100%;
+ }
+
+    .graphic-design-box .img-box,  .graphic-design-box .img-box img{
+        width: 80%;
+    }
+
+    .videografi-img-box  {
+        height: 240px;
+    }
+
+
+    .graphic-design-container {
+        padding: 14px;
+    }
+
+
+    .the-porfolio {
+        padding: 14px;
+    }
+    .the-porfolio-link {
+        width: 100%;
+    }
+
+    .the-portfolio-text-box {
+        padding: 14px;
+        height: auto;
+    }
+
+    .redesign {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .animation {
+        padding: 14px;
+    }
+
+    .animations-wrap {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .animation-first {
+        padding: 0;
+    }
+
+    .extra-space {
+        padding: 0;
+    }
+
+    .reused-header h3 {
+        font-size: 26px;
+    }
+
+    .website-design-container {
+        padding: 14px;
+    }
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*----------------------------------------------------media-queries-slut----------------------------------------------------*/
