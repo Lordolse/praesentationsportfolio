@@ -340,51 +340,48 @@ html, body {
 }
 
 @media only screen and (max-width: 1200px) {
-    .kontakt-main {
-/* Gør padding mindre på denne skærm*/
-/* Retning ændres til kolonne, og indhold bliver i center*/
+    /* Gør padding mindre på denne skærm*/
+    /* Retning ændres til kolonne, og indhold bliver i center*/
 
-        .kontakt img, .kontakt-white-text{
-            max-width: 420px;
-        }
+    .kontakt img,
+    .kontakt-white-text {
+        max-width: 420px;
+    }
 
-        .kontakt-h1 {
-            font-size: 38px;
-        }
+    .kontakt-h1 {
+        font-size: 38px;
+    }
 
-        .kontakt-p {
-            font-size: 22px;
-        }
-
-
+    .kontakt-p {
+        font-size: 22px;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .kontakt-main {
-             flex-direction: column;
-             align-items: center;
-        padding: 0 25px;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 25px; 
+    }
 
-        .kontakt img, .kontakt-white-text{
-            max-width: 100%;
-            width: 100%;
-        }
+    .kontakt img,
+    .kontakt-white-text {
+        max-width: 100%;
+        width: 100%;
+    }
 
-        .kontakt {
-            width: 100%;
-        }
+    .kontakt {
+        width: 100%;
+    }
 
-       /* .kontakt-h1 {font-size: 38px;} */
+    /* .kontakt-h1 {font-size: 38px;} */
 
-        .kontakt-p {
-            font-size: 22px;
-            width: 100%;
-        }
-
-
+    .kontakt-p {
+        font-size: 22px;
+        width: 100%;
     }
 }
+
 /*--------------------------------------------------------------------------------media-queries-kontakt-slut--------------------------------------------------------------------------------------*/
 
 /*--------------------------------------------------------------------------------media-queries-om-mig--------------------------------------------------------------------------------------*/
